@@ -382,12 +382,12 @@ func TestAccBatchPool_fixedScaleUpdate(t *testing.T) {
 }
 
 func (t BatchPoolResource) Exists(ctx context.Context, clients *clients.Client, state *terraform.InstanceState) (*bool, error) {
-	id, err := parse.CertificateID(state.ID)
+	id, err := parse.PoolID(state.ID)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := clients.Batch.PoolClient.Get(ctx, id.Name, id.BatchAccountName, id.ResourceGroup)
+	resp, err := clients.Batch.PoolClient.Get(ctx, id.ResourceGroup, id.BatchAccountName, id.Name)
 	if err != nil {
 		return nil, fmt.Errorf("retrieving Batch Pool %q (Account Name %q / Resource Group %q) does not exist", id.Name, id.BatchAccountName, id.ResourceGroup)
 	}
