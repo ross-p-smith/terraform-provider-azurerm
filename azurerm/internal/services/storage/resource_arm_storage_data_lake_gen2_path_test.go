@@ -51,7 +51,7 @@ func TestAccAzureRMStorageDataLakeGen2Path_requiresImport(t *testing.T) {
 	})
 }
 
-func TestAccAzureRMStorageDataLakeGen2Path_withSimpleACL(t *testing.T) {
+func TestAccAzureRMStorageDataLakeGen2Path_withSimpleACLAndUpdate(t *testing.T) {
 	data := acceptance.BuildTestData(t, "azurerm_storage_data_lake_gen2_path", "test")
 
 	resource.ParallelTest(t, resource.TestCase{
@@ -77,7 +77,7 @@ func TestAccAzureRMStorageDataLakeGen2Path_withSimpleACL(t *testing.T) {
 	})
 }
 
-func TestAccAzureRMStorageDataLakeGen2Path_withSimpleACLAndUpdate(t *testing.T) {
+func TestAccAzureRMStorageDataLakeGen2Path_withSimpleACL(t *testing.T) {
 	data := acceptance.BuildTestData(t, "azurerm_storage_data_lake_gen2_path", "test")
 
 	resource.ParallelTest(t, resource.TestCase{
