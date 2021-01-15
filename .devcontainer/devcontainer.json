@@ -18,11 +18,7 @@
 			}
 		},
 		"gopls": {
-			"usePlaceholders": true, // add parameter placeholders when completing a function
-			// Experimental settings
-			"completeUnimported": true, // autocomplete unimported packages
-			"watchFileChanges": true, // watch file changes outside of the editor
-			"deepCompletion": true, // enable deep completion
+			"usePlaceholders": true // add parameter placeholders when completing a function
 		},
 		"files.eol": "\n", // formatting only supports LF line endings	
 	},
@@ -39,5 +35,5 @@
 	"postCreateCommand": "make tools",
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
+	//"remoteUser": "vscode"
 }
