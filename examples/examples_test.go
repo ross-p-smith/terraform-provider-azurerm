@@ -2,8 +2,6 @@ package examples
 
 import (
 	"fmt"
-	"log"
-	"os"
 	"strings"
 	"testing"
 
@@ -12,12 +10,8 @@ import (
 )
 
 func TestRunExamples(t *testing.T) {
-	if os.Getenv("TF_EXAMPLE_TEST") == "" {
-		log.Printf("`TF_EXAMPLE_TEST` is not set - skipping")
-		t.Skip()
-	}
 
-	examplesDirectory := "./"
+	examplesDirectory := "/workspaces/terraform-provider-azurerm/examples/storage"
 	directories := locator.DiscoverExamples(examplesDirectory)
 
 	input := runner.TestRunInput{
